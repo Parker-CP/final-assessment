@@ -11,4 +11,10 @@ class Link < ApplicationRecord
     self
   end
 
+  def mark_unread
+    self.read = false
+    self.save
+    self
+  end
+
 end

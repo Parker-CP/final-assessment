@@ -12,8 +12,8 @@ function reading(){
     var postId = $(this).parent().data('postId');
     $.ajax({
       method: "PATCH",
-      url: "/api/v1/links/" + postId + "/downvote",
-      success: downVote(postId)
+      url: "/api/v1/links/" + postId + "/unread",
+      success: unread(postId)
     });
   });
 }
@@ -21,17 +21,19 @@ function reading(){
 function read(id){
   var quality = $('#' + id).children('span').text();
   console.log(quality);
-  var qualityHash = {"Read: true ": "Read: false ",
+  var qualityHash = {"Read: true ": "Read: true ",
                      "Read: false ": "Read: true "};
   var newQuality = qualityHash[quality];
   $('#' + id).children('span').text(newQuality);
+  $('#' + id).children('a').addClass('text-muted');
+
 }
 
-function downVote(id){
+function unread(id){
   var quality = $('#' + id).children('span').text();
-  var qualityHash = {"Quality: swill ": "Quality: swill ",
-                     "Quality: plausible ": "Quality: swill ",
-                     "Quality: genius ": "Quality: plausible "};
+  var qualityHash = {"Read: true ": "Read: false ",
+                     "Read: false ": "Read: false "};
   var newQuality = qualityHash[quality];
   $('#' + id).children('span').text(newQuality);
+  $('#' + id).children('a').removeClass('text-muted');
 }

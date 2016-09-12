@@ -21,6 +21,7 @@ function buildLink(link) {
     "<a href='" + link.url + "' class='linkUrl' data-id='" + link.id + "' id='body-" + link.id + "'>" + link.url + "</a>" +
     "<br><span class='linkQuality'>Read: " + link.read + " </span><br>" +
     "<input type='button' class='markRead btn-success glyphicon' value='Mark As Read'></input>" +
+    "<input type='button' class='thumbsDown btn-warning glyphicon' value='Mark Unread'></input>" +
     "<input type='button' class='deletePost btn-danger glyphicon' value='Delete'></input><br><br><hr><br></div>"
   );
 }
