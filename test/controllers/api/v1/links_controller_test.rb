@@ -52,14 +52,13 @@ class Api::V1::LinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "update link" do
-    skip
-    patch "/api/v1/links/#{links(:one).id}?title=new&body=alsonew"
+    patch "/api/v1/links/#{links(:one).id}?title=new&url=http://battlenet.com"
 
     assert_response :success
     link = JSON.parse(response.body)
 
     assert_equal "new", link["title"]
-    assert_equal "alsonew", link["body"]
+    assert_equal "http://battlenet.com", link["url"]
   end
 
 end

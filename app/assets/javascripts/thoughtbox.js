@@ -3,4 +3,5 @@ $(document).ready(function(){
   createLink();
   deleteLink();
   reading();
+  update();
 });
