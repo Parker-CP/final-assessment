@@ -1,0 +1,15 @@
+<div class='navbar navbar-default navbar-static-top col-md-12'>
+    <a href='/' class='navbar-brand'>ThoughtBox</a>
+    <% if current_user %>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "#{current_user.email}", user_path(current_user) %></li>
+      </ul>
+      <ul class='nav navbar-nav navbar-right'>
+      <li><%= link_to "Logout", logout_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul>
+        <li> <%= link_to "Login", login_path %> </li>
+      </ul>
+    <% end %>
+</div>
