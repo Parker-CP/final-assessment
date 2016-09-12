@@ -19,7 +19,7 @@ function update(){
     $('#' + id).on('blur keydown', function(event){
       if (event.type === 'blur' || event.keyCode === 13) {
         this.setAttribute('contentEditable', 'false');
-        editLink(dataId, this, { body: $(this).text()});
+        editLink(dataId, this, { url: $(this).text()});
       }
     });
   });
