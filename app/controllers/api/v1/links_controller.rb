@@ -8,6 +8,7 @@ class Api::V1::LinksController < ApplicationController
       render json: link
     else
       render json: {error: "invalid Data"}
+      render status: 400
     end
   end
 
