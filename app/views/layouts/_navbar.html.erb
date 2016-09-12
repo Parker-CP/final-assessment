@@ -1,6 +1,8 @@
 <div class='navbar navbar-default navbar-static-top col-md-12'>
-    <a href='/' class='navbar-brand'>ThoughtBox</a>
+    <!-- <a href='/' class='navbar-brand'> ThoughtBox </a> -->
+
     <% if current_user %>
+      <%= link_to "ThoughtBox", user_path(current_user), class: "navbar-brand" %>
       <ul class="nav navbar-nav">
         <li><%= link_to "#{current_user.email}", user_path(current_user) %></li>
       </ul>
@@ -8,7 +10,8 @@
       <li><%= link_to "Logout", logout_path, method: :delete %></li>
       </ul>
     <% else %>
-      <ul>
+      <%= link_to "ThoughtBox", login_path, class: "navbar-brand" %>
+      <ul class="nav navbar-nav">
         <li> <%= link_to "Login", login_path %> </li>
       </ul>
     <% end %>
