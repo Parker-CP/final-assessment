@@ -12,6 +12,10 @@ class Api::V1::LinksController < ApplicationController
     end
   end
 
+  def update
+    render json: Link.update(params[:id], link_params)
+  end
+
   def index
     render json: current_user.links
   end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1, defaults: {format: :json} do
-      resources :links, only: [:index, :create, :destroy]
+      resources :links, only: [:index, :create, :destroy, :update]
       patch '/links/:id/read',to: "read#update"
       patch '/links/:id/unread', to: "unread#update"
     end

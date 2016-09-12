@@ -24,6 +24,7 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "minitest-stub_any_instance", group: :test
 gem "validate_url"
+gem 'simplecov', :require => false, :group => :test
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -35,6 +36,11 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'capybara'
+  gem 'launchy'
+  gem 'mocha'
+  gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 2.0'
 end
 
 group :development do
