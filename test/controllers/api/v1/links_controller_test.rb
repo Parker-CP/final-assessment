@@ -19,7 +19,7 @@ class Api::V1::LinksControllerTest < ActionDispatch::IntegrationTest
   test "create link" do
     ApplicationController.stub_any_instance(:current_user, users(:one)) do
 
-      post "/api/v1/links?title=new&url=newlink"
+      post "/api/v1/links?title=new&url=http://google.com"
 
       assert_response :success
 
@@ -27,7 +27,7 @@ class Api::V1::LinksControllerTest < ActionDispatch::IntegrationTest
 
       assert_equal 3, Link.all.count
       assert_equal "new", link["title"]
-      assert_equal "newlink", link["url"]
+      assert_equal "http://google.com", link["url"]
     end
   end
 
