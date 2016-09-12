@@ -7,9 +7,9 @@ function filter(){
     var str = $link.children('span').text();
     console.log(str);
       if((str.indexOf(currentStatus) >= 0)) {
-        $link.parent().show();
+        $link.show();
       } else {
-        $link.parent().hide();
+        $link.hide();
       }
     });
   });
