@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 
   def new
-    @user = current_user
+    @user = User.new
   end
 
   def create
@@ -13,6 +13,10 @@ class UserController < ApplicationController
       flash.now[:error] = @user.errors.full_messages.join(', ')
       render :new
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
 end
