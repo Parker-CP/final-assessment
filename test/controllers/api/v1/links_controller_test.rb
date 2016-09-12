@@ -2,17 +2,18 @@ require 'test_helper'
 
 class Api::V1::LinksControllerTest < ActionDispatch::IntegrationTest
   test "fetch links" do
-    skip
-    get "/api/v1/links"
+    ApplicationController.stub_any_instance(:current_user, users(:one)) do
+      get "/api/v1/links"
 
-    assert_response :success
+      assert_response :success
 
-    links = JSON.parse(response.body)
+      links = JSON.parse(response.body)
 
-    assert_equal 2, links.count
-    assert_equal "First Link", links.first["title"]
-    assert_equal "This is the first link Ive had", links.first["body"]
-    assert_equal "swill", links.first["quality"]
+      assert_equal 2, links.count
+      assert_equal "First Link", links.first["title"]
+      assert_equal "First Link Url", links.first["url"]
+      assert_equal false, links.first["read"]
+    end
   end
 
   test "create link" do
@@ -31,18 +32,18 @@ class Api::V1::LinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "create link with bad data" do
-    skip
-    post "/api/v1/links"
+    ApplicationController.stub_any_instance(:current_user, users(:one)) do
+      post "/api/v1/links"
 
-    assert_response :success
+      assert_response :success
 
-    error = JSON.parse(response.body)
+      error = JSON.parse(response.body)
 
-    assert_equal "invalid Data", error["error"]
+      assert_equal "invalid Data", error["error"]
+    end
   end
 
   test "delete link" do
-    skip
     delete "/api/v1/links/#{links(:one).id}"
 
     assert_response :success

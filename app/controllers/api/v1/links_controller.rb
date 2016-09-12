@@ -1,5 +1,5 @@
 class Api::V1::LinksController < ApplicationController
-  skip_before_filter :require_login
+  skip_before_action :require_login
 
   def create
     link = Link.new(link_params)
@@ -9,6 +9,14 @@ class Api::V1::LinksController < ApplicationController
     else
       render json: {error: "invalid Data"}
     end
+  end
+
+  def index
+    render json: current_user.links
+  end
+
+  def destroy
+    render json: Link.destroy(params[:id])
   end
 
   private
