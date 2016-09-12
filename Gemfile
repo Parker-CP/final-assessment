@@ -24,6 +24,7 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "minitest-stub_any_instance", group: :test
 gem "validate_url"
+gem 'simplecov', :require => false, :group => :test
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

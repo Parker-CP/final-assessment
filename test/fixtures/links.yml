@@ -9,3 +9,4 @@ two:
   title: Second Link
   url: Second Link Url
   user: one
+  read: true
