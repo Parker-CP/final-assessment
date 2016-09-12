@@ -20,6 +20,7 @@ function buildLink(link) {
     "<div class='linkTitle'><h2 class='title' data-id='" + link.id + "' id='title-" + link.id + "'> " + link.title + "</h2></div>" +
     "<a href='" + link.url + "' class='linkUrl' data-id='" + link.id + "' id='body-" + link.id + "'>" + link.url + "</a>" +
     "<br><span class='linkQuality'>Read: " + link.read + " </span><br>" +
+    "<input type='button' class='markRead btn-success glyphicon' value='Mark As Read'></input>" +
     "<input type='button' class='deletePost btn-danger glyphicon' value='Delete'></input><br><br><hr><br></div>"
   );
 }
