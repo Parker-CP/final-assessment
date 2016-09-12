@@ -1,6 +1,17 @@
 class SessionsController < ApplicationController
 
   def new
-  end  
+  end
+
+  def create
+    @user = User.find_by(email: params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      redirect_to @user
+    else
+      flash.now[:error] = 'Please make sure all fields are correct...'
+      render(:new)
+    end
+  end
 
 end
