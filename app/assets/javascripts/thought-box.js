@@ -4,4 +4,5 @@ $(document).ready(function(){
   createLink();
   reading();
   update();
+  search();
 });
