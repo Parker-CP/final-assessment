@@ -20,10 +20,6 @@ class Api::V1::LinksController < ApplicationController
     render json: current_user.links
   end
 
-  def destroy
-    render json: Link.destroy(params[:id])
-  end
-
   private
 
   def link_params
