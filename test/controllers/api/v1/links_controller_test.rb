@@ -44,13 +44,6 @@ class Api::V1::LinksControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "delete link" do
-    delete "/api/v1/links/#{links(:one).id}"
-
-    assert_response :success
-    assert_equal 1, Link.all.count
-  end
-
   test "update link" do
     patch "/api/v1/links/#{links(:one).id}?title=new&url=http://battlenet.com"
 
