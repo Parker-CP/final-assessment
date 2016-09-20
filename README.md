@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Final Assessment (ThoughtBox)
 
-Things you may want to cover:
+The purpose of this app is to serve as a final assessment for Module 4. It combines a rails backend, a postgresql database, jQuery DOM manipulation, and AJAX requests.
 
-* Ruby version
+## Repository Setup
 
-* System dependencies
+1. Clone this repo
+2.  ```$ rake db:create```
+3.  ```$ rake db:migrate```
+4.  ```$ rails s``` to start the dev server
+5.  ```$ rake``` to run the tests
 
-* Configuration
+## Production
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The production app lives on Heroku at: https://boiling-waters-79711.herokuapp.com/?
