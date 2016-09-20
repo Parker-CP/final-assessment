@@ -3,4 +3,5 @@ $(document).ready(function(){
   alphabetize();
   createLink();
   reading();
+  update();
 });
