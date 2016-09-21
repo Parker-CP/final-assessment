@@ -4,6 +4,7 @@ one:
   title: First Link
   url: First Link Url
   user: one
+  read: false
 
 two:
   title: Second Link

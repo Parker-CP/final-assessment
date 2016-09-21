@@ -1,9 +1,11 @@
 $(document).ready(function(){
-  buildLinks();
-  alphabetize();
-  createLink();
-  reading();
-  update();
-  search();
-  filter();
+  if($('div').is('.links-index')){
+    buildLinks();
+    alphabetize();
+    createLink();
+    reading();
+    update();
+    search();
+    filter();
+  }
 });

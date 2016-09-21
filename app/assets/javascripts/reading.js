@@ -26,4 +26,5 @@ function read(id){
 function unread(id){
   $('#' + id).children('span').text("Read: false");
   $('#' + id).removeClass('read-back');
+  $('#' + id).removeClass('true');
 }

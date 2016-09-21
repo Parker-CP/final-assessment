@@ -9,11 +9,11 @@ class UserLogoutTest < ActionDispatch::IntegrationTest
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Login"
-    assert page.has_content?("Welcome David")
+    assert page.has_content?("David@gmail.com")
 
     click_link "Logout"
 
-    refute page.has_content?("Welcome David")
+    refute page.has_content?("David@gmail.com")
     assert page.has_content?("Login")
     assert page.has_content?("Create Account")
   end
