@@ -1,38 +1,40 @@
-<form class="navbar-form navbar-right">
-  <div class="form-group">
-    <input type="text" class="form-control search-box box-right" id="search" placeholder="Search">
-  </div>
-</form>
-<form class="navbar-form navbar-right">
-  <div class="form-group">
-    <select id="filter" name="status">
-    <option value=""></option>
-    <option value="true">Read</option>
-    <option value="false">Unread</option>
-  </select>
-  <input type="button" id="test" value="Sort Alphabetically"/>
-  </div>
-</form>
+<div class="links-index">
+  <form class="navbar-form navbar-right">
+    <div class="form-group">
+      <input type="text" class="form-control search-box box-right" id="search" placeholder="Search">
+    </div>
+  </form>
+  <form class="navbar-form navbar-right">
+    <div class="form-group">
+      <select id="filter" name="status">
+      <option value=""></option>
+      <option value="true">Read</option>
+      <option value="false">Unread</option>
+    </select>
+    <input type="button" id="test" value="Sort Alphabetically"/>
+    </div>
+  </form>
 
-<div class="container-fluid">
-  <h4>Whats your link?</h4>
+  <div class="link-display container-fluid">
+    <h4>Whats your link?</h4>
 
-  <div class="col-md-12">
-    <div class="row">
-      <div class="col-md-2">
-         <label for="link-title">Title</label>
-         <input class="form-control" type="text" id="link-title"><br />
-       </div>
-       <div class="col-md-9">
-         <label for="link-url">Url</label>
-         <input class="form-control" type="text" id="link-url"><br />
-       </div>
-       <div class="col-md-1">
-         <input type="submit" value="Save" class="btn btn-primary link-submit shift-down" id="submit-link">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-2">
+           <label for="link-title">Title</label>
+           <input class="form-control" type="text" id="link-title"><br />
+         </div>
+         <div class="col-md-9">
+           <label for="link-url">Url</label>
+           <input class="form-control" type="text" id="link-url"><br />
+         </div>
+         <div class="col-md-1">
+           <input type="submit" value="Save" class="btn btn-primary link-submit shift-down" id="submit-link">
+         </div>
        </div>
      </div>
-   </div>
 
-  <div id="links">
+    <div id="links">
+    </div>
   </div>
 </div>

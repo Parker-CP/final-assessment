@@ -5,7 +5,7 @@ function update(){
     var id = $(this).attr('id');
     $('#' + id).on('blur keydown', function(event){
       if (event.type === 'blur' || event.keyCode === 13) {
-        editLink(dataId, this, { title: $(this).text()});
+        editLink(dataId, this, {title: $(this).text().trim()});
       }
     });
   });
@@ -15,7 +15,7 @@ function update(){
     var id = $(this).attr('id');
     $('#' + id).on('blur keydown', function(event){
       if (event.type === 'blur' || event.keyCode === 13) {
-        editLink(dataId, this, { url: $(this).text()});
+        editLink(dataId, this, {url: $(this).text().trim()});
       }
     });
   });

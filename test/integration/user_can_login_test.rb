@@ -10,7 +10,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
     click_button "Login"
 
-    assert page.has_content?("Welcome David")
+    assert page.has_content?("David@gmail.com")
   end
 
   test "registed user input invalid information, render login" do
@@ -25,5 +25,4 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Login")
     assert page.has_content?("Please make sure all fields are correct...")
   end
-
 end
