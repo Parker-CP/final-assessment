@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GuestSignUpTest < ActionDispatch::IntegrationTest
   test "a user can be created" do
-    ApplicationController.stub_any_instance(:current_user, users(:one)) do
+    ApplicationController.stub_any_instance(:current_user, users(:two)) do
       visit new_user_path
       fill_in "Email", with: "David@gmail.com"
       fill_in "Password", with: "Password"

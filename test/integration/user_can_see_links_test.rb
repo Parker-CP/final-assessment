@@ -21,6 +21,36 @@ class UserCanSeeLinksTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Link A")
     assert page.has_content?("http://linka.com")
     assert page.has_content?("Read: false")
+
+    click_on "Mark As Read"
+
+    assert page.has_content?("Read: true")
+
+    click_on "Mark Unread"
+
+    select "Read", from: "status"
+
+    refute page.has_content?("Link A")
+    refute page.has_content?("http://linka.com")
+    refute page.has_content?("Read: false")
+
+    select "Unread", from: "status"
+
+    assert page.has_content?("Link A")
+    assert page.has_content?("http://linka.com")
+    assert page.has_content?("Read: false")
+
+    fill_in "Search", with: "ink"
+
+    assert page.has_content?("Link A")
+    assert page.has_content?("http://linka.com")
+    assert page.has_content?("Read: false")
+
+    fill_in "Search", with: "Bad Link!"
+
+    refute page.has_content?("Link A")
+    refute page.has_content?("http://linka.com")
+    refute page.has_content?("Read: false")
   end
 
 end
