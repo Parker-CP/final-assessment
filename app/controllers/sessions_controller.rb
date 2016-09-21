@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to root_path
     else
       flash.now[:error] = 'Please make sure all fields are correct...'
       render(:new)
