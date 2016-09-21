@@ -17,7 +17,6 @@ class Api::V1::LinksController < ApplicationController
   end
 
   def index
-    # byebug
     render json: current_user.links
   end
 

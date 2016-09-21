@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserCanSeeLinksTest < ActionDispatch::IntegrationTest
   setup do
-    Capybara.current_driver = Capybara.javascript_driver # :selenium by default
+    Capybara.current_driver = Capybara.javascript_driver
   end
 
   test "logged in user can see links" do
